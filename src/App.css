@@ -132,7 +132,7 @@ video {
 }
 
 .video-container.captions .captions-btn {
-  border-bottom: 3px solid black;
+  border-top: 3px solid black;
 }
 
 .video-controls-container .controls button.wide-btn {
@@ -243,4 +243,8 @@ video {
   border: none;
   text-align: center;
   font-size: 17px;
+}
+
+video::cue {
+  font-size: 24px;
 }

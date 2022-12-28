@@ -21,6 +21,7 @@ function VideoPlayer() {
   const timelineElement = useRef(null);
   const previewImgElement = useRef(null);
   const thumbnailImgElement = useRef(null);
+  const trackElement = useRef(null);
 
   const {
     isPlaying,
@@ -47,6 +48,7 @@ function VideoPlayer() {
     timelineElement,
     previewImgElement,
     thumbnailImgElement,
+    trackElement,
   });
 
   useKeypress("p", () => {
@@ -111,6 +113,7 @@ function VideoPlayer() {
           videoSrc={"/assets/video.mp4"}
           subtitleSrc={"/assets/subtitle.vtt"}
           togglePlay={togglePlay}
+          trackRef={trackElement}
         />
       </div>
     </>

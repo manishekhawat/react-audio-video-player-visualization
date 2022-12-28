@@ -8,7 +8,12 @@ function VideoControl(props) {
       ref={props.videoElementRef}
       onClick={props.togglePlay}
     >
-      <track kind="captions" srcLang="en" src={props.subtitleSrc} />
+      <track
+        kind="captions"
+        srcLang="en"
+        src={props.subtitleSrc}
+        ref={props.trackRef}
+      />
     </video>
   );
 }

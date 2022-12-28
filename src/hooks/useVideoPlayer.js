@@ -6,6 +6,7 @@ const useVideoPlayer = ({
   timelineElement,
   thumbnailImgElement,
   previewImgElement,
+  trackElement,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -200,6 +201,15 @@ const useVideoPlayer = ({
   function toggleCaptions() {
     const captions = videoElement.current.textTracks[0];
     captions.mode = "hidden";
+
+    trackElement.current.addEventListener("load", () => {
+      if (trackElement.current.track.cues == null) return;
+      Array.from(trackElement.current.track.cues).forEach((c) => {
+        c.line = 0;
+      });
+    });
+
+    videoElement.current.textTracks[0].line = 4;
     const isHidden = isCaptionsOn === false;
     setIsCaptionsOn(!isCaptionsOn);
     captions.mode = isHidden ? "showing" : "hidden";

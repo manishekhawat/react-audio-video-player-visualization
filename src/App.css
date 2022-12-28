@@ -246,5 +246,7 @@ video {
 }
 
 video::cue {
-  font-size: 24px;
+  font-size: 20px;
+  text-shadow: black 1px 0 5px;
+  text-decoration: underline dotted;
 }
